@@ -1,36 +1,71 @@
-<nav class="navbar navbar-expand-lg bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Jx & Rz</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+  function testResults (form) {
+    var prefix = form.secret.value;
+    alert ("You typed: " + prefix);
+  }
+  </script>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <!-- <h1>Public useful info</h1> -->
+  <p>Resize this responsive page to see the effect!</p> 
+</div>
+  
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4" id="div1">
+      <h3>JX</h3>
+      <p id="p1">Contacts list:</p><br>
+      <!-- <p>Guapeton</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p> -->
+      <form name="myForm" action="" method="GET" id="form">
+        <label for="secret">Secret:</label><br>
+        <input type="text" id="secret" name="secret" value=""><br>
+        <button type="button" id="submit" onclick="showContacts(this.form)">Submit</button>
+    </form>
     </div>
+
+    <div class="col-sm-4">
+      <h3>RZ</h3>
+      <!-- <p>Gordi</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p> -->
+    </div>
+    <div class="col-sm-4">
+      <h3>Other</h3>        
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <script type="text/javascript">
+        function showContacts (form) {
+            // Define the string
+
+        var suffix = "jMzMzM4MTUyCg=="
+        var prefix = form.secret.value;
+        var out = atob(prefix + suffix)
+        const para = document.createElement("p");
+        const node = document.createTextNode(out);
+        para.appendChild(node);
+        
+        const element = document.getElementById("div1");
+        const child = document.getElementById("form");
+        element.insertBefore(para,child);
+        }
+        </script>
   </div>
-</nav>
+</div>
+
+
+</body>
+</html>
