@@ -30,7 +30,7 @@
       <p id="p1">Contacts list:</p>
       <form name="myForm" action="" method="GET" id="form1">
         <label for="secret">Secret:</label>
-        <input type="text" id="secret" name="JX secret" value="">
+        <input type="text" id="secret" name="secret" value="">
         <button type="button" id="submit" onclick="showContacts(this.form, 0)">Submit</button>
     </form>
     </div>
@@ -40,16 +40,10 @@
 	  <p id="p2">Contacts list:</p>
       <form name="myForm" action="" method="GET" id="form2">
         <label for="secret">Secret:</label>
-        <input type="text" id="secret" name="RZ secret" value="">
+        <input type="text" id="secret" name="secret" value="">
         <button type="button" id="submit" onclick="showContacts(this.form, 1)">Submit</button>
     </form>
 	</div>
-	
-    <div class="col-sm-4">
-      <h3>Other</h3>        
-      <p>Paragraph 1</p>
-      <p>Paragraph 2</p>
-    </div>
 
     <script type="text/javascript">
         function showContacts (form, position) {
@@ -57,11 +51,7 @@
 			"U2FsdGVkX1+tBhGQYJkHpJjvNdd6QNXVGLIWsR1E9Rdbf6d+f5m9N9hRWxtLafjc"];
 			const div = ["div1", "div2"]
 			const f = ["form1", "form2"]
-			//var encrypted = CryptoJS.AES.encrypt("Messagse", form.secret.value);
             var decrypted = CryptoJS.AES.decrypt(encrypted[position], form.secret.value);
-            //console.log(encrypted)
-            //console.log(decrypted)
-            //console.log(decrypted.toString(CryptoJS.enc.Utf8))
             const para = document.createElement("p");
             const node = document.createTextNode(decrypted.toString(CryptoJS.enc.Utf8));
             para.appendChild(node);
