@@ -21,7 +21,7 @@
 
 <div class="jumbotron text-center">
   <h1>Public useful info</h1>
-  <p>Resize this responsive page to see the effect!</p> 
+  <p>Emergency contacts!</p> 
 </div>
   
 <div class="container">
@@ -53,12 +53,12 @@
 
     <script type="text/javascript">
         function showContacts (form) {
-            var encrypted = CryptoJS.AES.encrypt("Messagse", form.secret.value);
-
+            //var encrypted = CryptoJS.AES.encrypt("Messagse", form.secret.value);
+            var encrypted = "U2FsdGVkX1+WiM90l2+oG2NUbq3gOIUHp4G2RlQrX9ykEfecBPQYdcJ2ptl8DGw3IlH95z63/9jtZZ9uBSS5+Q=="
             var decrypted = CryptoJS.AES.decrypt(encrypted, form.secret.value);
-            console.log(encrypted)
-            console.log(decrypted)
-            console.log(decrypted.toString(CryptoJS.enc.Utf8))
+            //console.log(encrypted)
+            //console.log(decrypted)
+            //console.log(decrypted.toString(CryptoJS.enc.Utf8))
 
 
         const para = document.createElement("p");
