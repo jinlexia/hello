@@ -29,15 +29,21 @@
     <div class="col-sm-4" id="div1" style="white-space:pre">
       <h3>JX</h3>
       <p id="p1">Contacts list:</p>
-      <form name="myForm" action="" method="GET" id="form">
+      <form name="myForm" action="" method="GET" id="form1">
         <label for="secret">Secret:</label>
         <input type="text" id="secret" name="secret" value=""><br>
-        <button type="button" id="submit" onclick="showContacts(this.form)">Submit</button>
+        <button type="button" id="submit" onclick="showContacts(this.form, 0)">Submit</button>
     </form>
     </div>
 
-    <div class="col-sm-4">
-      <h3>RZ</h3>
+    <div class="col-sm-4" id="div2" style="white-space:pre">
+	  <h3>RZ</h3>
+	  <p id="p2">Contacts list:</p>
+      <form name="myForm" action="" method="GET" id="form2">
+        <label for="secret">Secret:</label>
+        <input type="text" id="secret" name="secret" value=""><br>
+        <button type="button" id="submit" onclick="showContacts(this.form, 1)">Submit</button>
+    </form>
     </div>
     <div class="col-sm-4">
       <h3>Other</h3>        
@@ -46,19 +52,21 @@
     </div>
 
     <script type="text/javascript">
-        function showContacts (form) {
-            //var encrypted = CryptoJS.AES.encrypt("Messagse", form.secret.value);
-            var encrypted = "U2FsdGVkX1+WiM90l2+oG2NUbq3gOIUHp4G2RlQrX9ykEfecBPQYdcJ2ptl8DGw3IlH95z63/9jtZZ9uBSS5+Q=="
-            var decrypted = CryptoJS.AES.decrypt(encrypted, form.secret.value);
+        function showContacts (form, position) {
+			const encrypted = ["U2FsdGVkX1+FIbgNwhJd6ZcSOBgqGlbnAf3JGoYu0iCftEpot7KL0iu3IsZYWRWeS3VAeJv8HYlUN2ZXqS6BuA==", "U2FsdGVkX1+WiM90l2+oG2NUbq3gOIUHp4G2RlQrX9ykEfecBPQYdcJ2ptl8DGw3IlH95z63/9jtZZ9uBSS5+Q=="];
+			const div = ["div1", "div2"]
+			const form = ["form1", "form2"]
+			//var encrypted = CryptoJS.AES.encrypt("Messagse", form.secret.value);
+            var decrypted = CryptoJS.AES.decrypt(encrypted[position], form.secret.value);
             //console.log(encrypted)
             //console.log(decrypted)
             //console.log(decrypted.toString(CryptoJS.enc.Utf8))
         const para = document.createElement("p");
-        const node = document.createTextNode(decrypted.toString(CryptoJS.enc.Utf8));
+        const node = document.createTextNode(decrypted[position].toString(CryptoJS.enc.Utf8));
         para.appendChild(node);
         
-        const element = document.getElementById("div1");
-        const child = document.getElementById("form");
+        const element = document.getElementById(div[position]);
+        const child = document.getElementById(form[position]);
         element.insertBefore(para,child);
         }
         </script>
