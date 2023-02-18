@@ -62,7 +62,7 @@
             //console.log(decrypted)
             //console.log(decrypted.toString(CryptoJS.enc.Utf8))
         const para = document.createElement("p");
-        const node = document.createTextNode(decrypted[position].toString(CryptoJS.enc.Utf8));
+        const node = document.createTextNode(decrypted.toString(CryptoJS.enc.Utf8));
         para.appendChild(node);
         
         const element = document.getElementById(div[position]);
