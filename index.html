@@ -26,12 +26,9 @@
   
 <div class="container">
   <div class="row">
-    <div class="col-sm-4" id="div1">
+    <div class="col-sm-4" id="div1" style="white-space:pre">
       <h3>JX</h3>
       <p id="p1">Contacts list:</p><br>
-      <!-- <p>Guapeton</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p> -->
       <form name="myForm" action="" method="GET" id="form">
         <label for="secret">Secret:</label><br>
         <input type="text" id="secret" name="secret" value=""><br>
@@ -41,9 +38,6 @@
 
     <div class="col-sm-4">
       <h3>RZ</h3>
-      <!-- <p>Gordi</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p> -->
     </div>
     <div class="col-sm-4">
       <h3>Other</h3>        
@@ -59,8 +53,6 @@
             //console.log(encrypted)
             //console.log(decrypted)
             //console.log(decrypted.toString(CryptoJS.enc.Utf8))
-
-
         const para = document.createElement("p");
         const node = document.createTextNode(decrypted.toString(CryptoJS.enc.Utf8));
         para.appendChild(node);
