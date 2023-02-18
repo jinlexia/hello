@@ -7,9 +7,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<!-- New imports -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
-
+  <!-- New imports -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
   <script type="text/javascript">
   function testResults (form) {
     var prefix = form.secret.value;
@@ -31,7 +30,7 @@
       <p id="p1">Contacts list:</p>
       <form name="myForm" action="" method="GET" id="form1">
         <label for="secret">Secret:</label>
-        <input type="text" id="secret" name="secret" value=""><br>
+        <input type="text" id="secret" name="JX secret" value="">
         <button type="button" id="submit" onclick="showContacts(this.form, 0)">Submit</button>
     </form>
     </div>
@@ -41,19 +40,21 @@
 	  <p id="p2">Contacts list:</p>
       <form name="myForm" action="" method="GET" id="form2">
         <label for="secret">Secret:</label>
-        <input type="text" id="secret" name="secret" value=""><br>
+        <input type="text" id="secret" name="RZ secret" value="">
         <button type="button" id="submit" onclick="showContacts(this.form, 1)">Submit</button>
     </form>
-    </div>
+	</div>
+	
     <div class="col-sm-4">
       <h3>Other</h3>        
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+      <p>Paragraph 1</p>
+      <p>Paragraph 2</p>
     </div>
 
     <script type="text/javascript">
         function showContacts (form, position) {
-			const encrypted = ["U2FsdGVkX1+FIbgNwhJd6ZcSOBgqGlbnAf3JGoYu0iCftEpot7KL0iu3IsZYWRWeS3VAeJv8HYlUN2ZXqS6BuA==", "U2FsdGVkX1+WiM90l2+oG2NUbq3gOIUHp4G2RlQrX9ykEfecBPQYdcJ2ptl8DGw3IlH95z63/9jtZZ9uBSS5+Q=="];
+			const encrypted = ["U2FsdGVkX1+FIbgNwhJd6ZcSOBgqGlbnAf3JGoYu0iCftEpot7KL0iu3IsZYWRWeS3VAeJv8HYlUN2ZXqS6BuA==", 
+			"U2FsdGVkX1+WiM90l2+oG2NUbq3gOIUHp4G2RlQrX9ykEfecBPQYdcJ2ptl8DGw3IlH95z63/9jtZZ9uBSS5+Q=="];
 			const div = ["div1", "div2"]
 			const f = ["form1", "form2"]
 			//var encrypted = CryptoJS.AES.encrypt("Messagse", form.secret.value);
@@ -61,18 +62,17 @@
             //console.log(encrypted)
             //console.log(decrypted)
             //console.log(decrypted.toString(CryptoJS.enc.Utf8))
-        const para = document.createElement("p");
-        const node = document.createTextNode(decrypted.toString(CryptoJS.enc.Utf8));
-        para.appendChild(node);
+            const para = document.createElement("p");
+            const node = document.createTextNode(decrypted.toString(CryptoJS.enc.Utf8));
+            para.appendChild(node);
         
-        const element = document.getElementById(div[position]);
-        const child = document.getElementById(f[position]);
-        element.insertBefore(para,child);
+            const element = document.getElementById(div[position]);
+            const child = document.getElementById(f[position]);
+            element.insertBefore(para,child);
         }
         </script>
   </div>
 </div>
-
 
 </body>
 </html>
