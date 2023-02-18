@@ -55,7 +55,7 @@
         function showContacts (form, position) {
 			const encrypted = ["U2FsdGVkX1+FIbgNwhJd6ZcSOBgqGlbnAf3JGoYu0iCftEpot7KL0iu3IsZYWRWeS3VAeJv8HYlUN2ZXqS6BuA==", "U2FsdGVkX1+WiM90l2+oG2NUbq3gOIUHp4G2RlQrX9ykEfecBPQYdcJ2ptl8DGw3IlH95z63/9jtZZ9uBSS5+Q=="];
 			const div = ["div1", "div2"]
-			const form = ["form1", "form2"]
+			const f = ["form1", "form2"]
 			//var encrypted = CryptoJS.AES.encrypt("Messagse", form.secret.value);
             var decrypted = CryptoJS.AES.decrypt(encrypted[position], form.secret.value);
             //console.log(encrypted)
@@ -66,7 +66,7 @@
         para.appendChild(node);
         
         const element = document.getElementById(div[position]);
-        const child = document.getElementById(form[position]);
+        const child = document.getElementById(f[position]);
         element.insertBefore(para,child);
         }
         </script>
