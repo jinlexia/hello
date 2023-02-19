@@ -47,8 +47,8 @@
 
     <script type="text/javascript">
         function showContacts (form, position) {
-			const encrypted = ["U2FsdGVkX18E1JcTi+aaNQP51qQfitA8iXBs9H56iPGTNc8Np43FO4h817aQrwzA", 
-			"U2FsdGVkX1+tBhGQYJkHpJjvNdd6QNXVGLIWsR1E9Rdbf6d+f5m9N9hRWxtLafjc"];
+			const encrypted = ["U2FsdGVkX19ATVOKUeHDvHEFomEVYbSyM5sMahWYfn2acn2gZmn3nt3xO9h/zyA5UTXO6RgY2jufEwfYgn+dpEBigj77wg7+gyCzH0q0PJKckLVDsF4Ru9bTgmPcVrq66YG1eZxyA8r72ly83hRVayD2oxvXAXy4himSs/U4MjhtPgjsbolJQKwBlidtSrah", 
+			"U2FsdGVkX19Ce+e52qnJgECPDNpVPsx8MYulwuKr8BP+beJINlk4Kjyn/F+0yhJx8zVcZtOeUjapAa+0M8mMJA=="];
 			const div = ["div1", "div2"]
 			const f = ["form1", "form2"]
             var decrypted = CryptoJS.AES.decrypt(encrypted[position], form.secret.value);
