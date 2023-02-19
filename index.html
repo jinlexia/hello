@@ -28,7 +28,7 @@
 
 <div class="jumbotron text-center">
   <h1>Public useful info</h1>
-  <p>Emergency contact s!</p> 
+  <p>Emergency contacts!</p> 
 </div>
   
 <div class="container">
@@ -53,12 +53,23 @@
     </form>
 	</div>
 
+	<div class="col-sm-4" id="div3" style="white-space:pre">
+		<h3>More</h3>
+		<p id="p1">Guess it</p>
+		<form name="myForm" action="" method="GET" id="form3">
+		  <label for="secret">Secret:</label>
+		  <input type="text" id="secret" name="secret" value="">
+		  <button type="button" id="submit" onclick="showContacts(this.form, 2)">Submit</button>
+	  </form>
+	  </div>
+
     <script type="text/javascript">
         function showContacts (form, position) {
-			const encrypted = ["U2FsdGVkX19ATVOKUeHDvHEFomEVYbSyM5sMahWYfn2acn2gZmn3nt3xO9h/zyA5UTXO6RgY2jufEwfYgn+dpEBigj77wg7+gyCzH0q0PJKckLVDsF4Ru9bTgmPcVrq66YG1eZxyA8r72ly83hRVayD2oxvXAXy4himSs/U4MjhtPgjsbolJQKwBlidtSrah", 
-			"U2FsdGVkX19Ce+e52qnJgECPDNpVPsx8MYulwuKr8BP+beJINlk4Kjyn/F+0yhJx8zVcZtOeUjapAa+0M8mMJA=="];
-			const div = ["div1", "div2"]
-			const f = ["form1", "form2"]
+			const encrypted = ["U2FsdGVkX1+R6qdNzTmZL4I+OPiXYw12+W94M8q6KBG9mL8FgCQQaOMTmBBawi6cB4wAf8bR1x1vobSP5ayuRIq7KXRUmr8RPpFz4Dx8J6d0HWXBPXZ5rrIxytFaGaJRK81DhpL57QHK/nglBf9r1cXiWdzMCiH08lhOD4KhsTDZg4nLSsD/KTDfI5gY2RKQ4RvcIDoCKVvE/n7V1uoT9QEBRFeDO4NOrOPOIBfTvyM=", 
+			"U2FsdGVkX1/4/Xio0jD1A3fXX9IIfrOPQNEyPTHZLxrY/j5cHUah7ZmKoZUdXZ6sBcVK1Cq0i/Fk8WD8SjEl9pQr1+LhdnguD2JHJ1TWuv8yzHDhtIlBQGQRwTZm9JBlaNe/NMg/NG9cPACA+c0O05+x4soIOml38zPpEdSopeU=", 
+			"U2FsdGVkX1+yG8+gDanHLa9crSZw1BtPKNF7SBeuEN2nqqt0VbZqanYJDREBQ+OWXbtnbzdMWxlbP0GFwRTh53le3C6CCrrAnGJCOmokFs8TOSMgCs/UrSEgDq9I/Ow0f5ipv5nk0pbFzq+06rzvmj8dE4Jea4QRHtKWDLh4N/8iA7Kg3RU1IjiokBCWehNfkGT7SD4ufDNy6ur/6mMd6uMlltaOQmGY9ZpgnEgj8Hkxp5+JMEV9FSD+GGkWOB/VrUxq1SkOQTzZApUSJtVL0A=="];
+			const div = ["div1", "div2", "div3"]
+			const f = ["form1", "form2", "form3"]
             var decrypted = CryptoJS.AES.decrypt(encrypted[position], form.secret.value);
             const para = document.createElement("p");
             const node = document.createTextNode(decrypted.toString(CryptoJS.enc.Utf8));
