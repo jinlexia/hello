@@ -65,27 +65,24 @@
 
     <script type="text/javascript">
         function showContacts (form, position) {
-			<!-- const encrypted = [
-      "", 
-			"",
-      ""
-      ]; -->
-      const encrypted = [
-      "U2FsdGVkX1/Mo03/bk4Q+7N2bHqAuOTpgEF/T1o8pal6BzGhQa2JFUhsA4ke7ijjG6hZNGM6saLyTp4pRx0GgoHzUkOrEV8oCKwg7O8qz4HfKbfVHJnw7ILs5ZDCvVIbQ+6AT3tsQ3teE+n+OL0Pf4Xg52YoXl2MdQSgPnzwFwLHdwxYaaGKCWDwIPntiZmqpAilkmpkuwhoTsr56InfGIVQsHHOQsA17u4O+hE+K8k=", 
-			"U2FsdGVkX19al4YiNMusZPcuYVK2xkrYfW74UxzZ5N/whkPVwOpWtirT3iPmPnNp/367Wi0ZKk7u4fxU2JLsgdVojYbO3BnPNRop85g+we4ymmfWdQfzC2Vj93D32l1d1tkZ+prQ8PbP+iYGyJd1lRnthKoUw2xPu/rImqZtSNs=",
-      "U2FsdGVkX18UykniTDw4Dc4hUCQUzUuOxUM1zTg0e8Y25GsoWmE7GmWZVZeQDtH1Yj+nGL33p48qOoINL7i8RDMJ31Mn2dq+VNnzrv5GDCHqByYhqHPAkEQZSuO6ZE7A/+R50psgwZea93PbOVwmavhYgmtyv9B8/dqUyb9JhXjjjTlspq9U/n51in3ACjkyiqTlk72VrTdcqYUsD8AdM9Wy5HVakeKFftUnTIhrciFWxpDokmNdfjClHJ/PBfG84rodnS9y95kJmX76xXLPYA=="
-      ];
-			
-      const div = ["div1", "div2", "div3"]
-			const f = ["form1", "form2", "form3"]
-            var decrypted = CryptoJS.AES.decrypt(encrypted[position], form.secret.value);
-            const para = document.createElement("p");
-            const node = document.createTextNode(decrypted.toString(CryptoJS.enc.Utf8));
-            para.appendChild(node);
-        
-            const element = document.getElementById(div[position]);
-            const child = document.getElementById(f[position]);
-            element.insertBefore(para,child);
+          //const encrypted = ["", "",""]; 
+          const encrypted = [
+          "U2FsdGVkX1+oFCyp2/VwKGbMA2DjGn72VWt6wYaAZ7lvs74+vFSjRDYJB820o+h9wPW39zXnbFL8DRj7JiFUJB8CURKdHR6gk33fcGIBSyx2CAGrAheL02aqzgKpZTEPdOce/iA/gTqpufsbqrtVLJOfoZkVUOtohxKNi7ETi44G9wHcPv2FptHj7xlw58Ok1U+oXzh9YyOvnMT8uuUCylXS5PC/N+eCRPLhZ2Ffi2o=", 
+          "U2FsdGVkX19al4YiNMusZPcuYVK2xkrYfW74UxzZ5N/whkPVwOpWtirT3iPmPnNp/367Wi0ZKk7u4fxU2JLsgdVojYbO3BnPNRop85g+we4ymmfWdQfzC2Vj93D32l1d1tkZ+prQ8PbP+iYGyJd1lRnthKoUw2xPu/rImqZtSNs=",
+          "U2FsdGVkX18UykniTDw4Dc4hUCQUzUuOxUM1zTg0e8Y25GsoWmE7GmWZVZeQDtH1Yj+nGL33p48qOoINL7i8RDMJ31Mn2dq+VNnzrv5GDCHqByYhqHPAkEQZSuO6ZE7A/+R50psgwZea93PbOVwmavhYgmtyv9B8/dqUyb9JhXjjjTlspq9U/n51in3ACjkyiqTlk72VrTdcqYUsD8AdM9Wy5HVakeKFftUnTIhrciFWxpDokmNdfjClHJ/PBfG84rodnS9y95kJmX76xXLPYA=="
+          ];
+          
+          const div = ["div1", "div2", "div3"]
+          const f = ["form1", "form2", "form3"]
+          var decrypted = CryptoJS.AES.decrypt(encrypted[position], form.secret.value);
+          console.log(decrypted.toString(CryptoJS.enc.Utf8));
+          const para = document.createElement("p");
+          const node = document.createTextNode(decrypted.toString(CryptoJS.enc.Utf8));
+          para.appendChild(node);
+      
+          const element = document.getElementById(div[position]);
+          const child = document.getElementById(f[position]);
+          element.insertBefore(para,child);
         }
         </script>
   </div>
